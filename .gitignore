@@ -7,3 +7,5 @@ data/raw/
 data/processed/
 *.log
 .ipynb_checkpoints/
+*.so
+*.so.*
