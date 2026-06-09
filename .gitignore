@@ -10,3 +10,4 @@ data/processed/
 *.so
 *.so.*
 models/*.pkl
+reports/*.pbix
