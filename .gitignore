@@ -9,3 +9,4 @@ data/processed/
 .ipynb_checkpoints/
 *.so
 *.so.*
+models/*.pkl
