@@ -1,0 +1,25 @@
+version: 2
+
+models:
+  - name: stg_ai4i2020
+    description: "Datos de sensores industriales AI4I 2020 con tipos correctos y columnas normalizadas"
+    columns:
+      - name: udi
+        description: "Identificador único del registro"
+        tests:
+          - unique
+          - not_null
+      - name: product_type
+        description: "Tipo de producto: L (low), M (medium), H (high quality)"
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['L', 'M', 'H']
+      - name: machine_failure
+        description: "Indicador binario de falla: 1 = falla, 0 = normal"
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: [0, 1]

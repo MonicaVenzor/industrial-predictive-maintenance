@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: raw
+    schema: public
+    tables:
+      - name: raw_ai4i2020
+        description: "Dataset AI4I 2020 cargado sin transformaciones desde UCI"
