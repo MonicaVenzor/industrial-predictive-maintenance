@@ -1,0 +1,30 @@
+version: 2
+
+models:
+  - name: mart_machine_monitoring
+    description: "Modelo analítico con variables de negocio derivadas para monitoreo de maquinaria industrial"
+    columns:
+      - name: udi
+        description: "Identificador único del registro"
+        tests:
+          - unique
+          - not_null
+      - name: temperature_delta_k
+        description: "Delta entre temperatura de proceso y aire en Kelvin"
+        tests:
+          - not_null
+      - name: power_kw
+        description: "Potencia estimada en kW calculada desde torque y velocidad rotacional"
+        tests:
+          - not_null
+      - name: tool_wear_category
+        description: "Categoria de desgaste: low (<100 min), medium (100-200 min), high (>200 min)"
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['low', 'medium', 'high']
+      - name: total_failure_modes
+        description: "Suma de modos de falla activos en el registro"
+        tests:
+          - not_null
