@@ -1,6 +1,12 @@
 # Industrial Predictive Maintenance
 > End-to-end data pipeline for industrial failure prediction using AI4I 2020 dataset (UCI)
 
+## Business Context
+
+Unplanned machine downtime in heavy manufacturing costs between $10,000 and $250,000 per hour depending on the industry. Most failures don't happen suddenly — they're preceded by measurable changes in temperature, rotational speed, torque, and tool wear that go unnoticed without a systematic monitoring approach.
+
+This project simulates a predictive maintenance system for an industrial facility: instead of reacting to failures after they occur, the pipeline detects early warning patterns in sensor data and flags machines at risk before the failure happens. For companies like Caterpillar, Ternium, or CEMEX, the difference between reactive and predictive maintenance directly impacts production continuity and operational cost.
+
 ## Quick Summary
 - **10,000 records** processed through a full analytics pipeline
 - **XGBoost classifier** with ROC-AUC of 0.98 and 84% recall on failure detection
@@ -112,8 +118,21 @@ cd ../..
 python src/models/save_model.py
 ```
 
+## Governance & Ethics
+
+**Data privacy:** the AI4I 2020 dataset contains no personally identifiable information. All records represent anonymized machine sensor readings with no traceability to individual operators or facilities.
+
+**Data quality as governance:** the 13 automated dbt tests act as a formal quality gate — no transformation layer can produce outputs unless the upstream data passes all acceptance criteria. This mirrors the validation requirements in ISO 9001-certified environments.
+
+**Pipeline traceability:** every transformation is documented in dbt with explicit column descriptions and source declarations. The Git commit history records every technical decision with rationale. Raw data is preserved unmodified in a separate schema, ensuring full audit trail from source to dashboard.
+
+**Model fairness:** the XGBoost classifier was evaluated beyond accuracy — ROC-AUC and recall on the minority class were the primary metrics, explicitly avoiding the misleading performance that accuracy alone would show on a 96.6%/3.4% imbalanced dataset.
+
 ## Author
 
-**Monica Venzor** — Data Analytics | Genomic Biotechnology background
+**Mónica Venzor** — Data Analytics Engineer | Genomic Biotechnology background
 ISO 17025/9001 certified internal auditor | Industrial regulated environments
-[GitHub](https://github.com/MonicaVenzor)
+
+📧 mvenzor.data@gmail.com
+🔗 [LinkedIn](https://www.linkedin.com/in/monicavenzor/)
+💻 [GitHub](https://github.com/MonicaVenzor)
