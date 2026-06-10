@@ -67,6 +67,8 @@ This project demonstrates applied ML with industrial context:
 Model artifacts serialized with joblib for pipeline integration.
 
 ## Project Structure
+
+```
 industrial-predictive-maintenance/
 ├── data/
 │   ├── raw/              # Original dataset (not tracked in git)
