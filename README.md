@@ -85,6 +85,7 @@ industrial-predictive-maintenance/
 │   └── docker-compose.yml
 ├── reports/              # Power BI .pbix
 └── requirements.txt
+```
 
 ## Reproducing This Project
 
